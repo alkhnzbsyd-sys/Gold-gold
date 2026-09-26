@@ -14,6 +14,9 @@ from price_history import save_today_prices, get_yesterday_prices
 DIVIDER = "┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈"
 
 
+def _fmt_decimal(n: float) -> str:
+    return f"{n:,.2f}"
+
 def _fmt(n: float) -> str:
     return f"{n:,.0f}"
 
@@ -23,7 +26,7 @@ def _row(label: str, value: str, emoji: str = "▫️") -> str:
 
 
 def _buy_sell_row(label: str, data: dict, emoji: str = "▫️") -> str:
-    return f"{emoji} {label}  ┃  شراء: *{_fmt(data['buy'])}*  |  بيع: *{_fmt(data['sell'])}* ريال"
+    return f"{emoji} {label}  ┃  شراء: *{_fmt_decimal(data['buy'])}*  |  بيع: *{_fmt_decimal(data['sell'])}* ريال"
 
 
 def _change_badge(today_val: float, yesterday_val) -> str:
