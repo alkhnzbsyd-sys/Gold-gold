@@ -102,7 +102,6 @@ def main():
 
     job_queue.run_daily(send_exchange_update, time=MORNING_UTC, name="morning_exchange")
     job_queue.run_daily(send_gold_update, time=MORNING_UTC, name="morning_gold")
-    job_queue.run_daily(send_gold_update, time=EVENING_UTC, name="evening_gold")
     job_queue.run_daily(send_weekend_chart_and_poll, time=EVENING_UTC, name="weekend_chart_poll")
 
     logger.info("🟡 البوت يعمل الآن...")
